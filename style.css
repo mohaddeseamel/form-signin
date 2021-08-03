@@ -9,13 +9,19 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 200px;
 }
+
 body .card{
     display: flex;
     align-items: stretch;
     width: 600px;
     position: relative;
+}
+@media screen and (max-width:992px){
+    body .card{
+        display: flex;
+        flex-direction: column;
+    }
 }
 body .card::after{
     content: "";
@@ -28,6 +34,16 @@ body .card::after{
     right: -100px;
     z-index: -1;
 }
+@media screen and (max-width:992px){
+    body .card::after{
+        background-color: white;
+    }
+}
+@media screen and (max-width:768px){
+    body .card::after{
+        display: none;
+    }
+}
 body .card::before{
     content: "";
     width: 200px;
@@ -39,6 +55,17 @@ body .card::before{
     left: -100px;
     z-index: -1;
 }
+@media screen and (max-width:992px){
+    body .card::before{
+        background-color: rgb(67, 32, 124);
+    }
+}
+@media screen and (max-width:768px){
+    body .card::before{
+        display: none;
+    }
+}
+
 body .card .box-left{
     width: 40%;
     height: 550px;
@@ -49,6 +76,16 @@ body .card .box-left{
     flex-direction: column;
     padding: 25px 20px;
 }
+@media screen and (max-width:992px){
+    body .card .box-left{
+        width: 100%;
+        height: 180px;
+        padding: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 15px;
+    }
+}
+
 body .card .box-left .logo{
     display: flex;
     align-items: center;
@@ -58,24 +95,47 @@ body .card .box-left .logo img{
     height: 30px;
     margin: 20px 0 0 15px;
 }
+@media screen and (max-width:992px){
+    body .card .box-left .logo img{
+        width: 40px;
+        height: 40px;
+    }
+}
 body .card .box-left .logo span{
     color: white;
     margin: 25px 0 0 5px;
     font-size: 17px;
+}
+@media screen and (max-width:992px){
+    body .card .box-left .logo span{
+        font-size: 20px;
+    }
 }
 body .card .box-left .title{
     color: white;
     margin: 90px 0 0 15px;
     font-size: 18px;
 }
+@media screen and (max-width:992px){
+    body .card .box-left .title{
+        margin-top: 40px;
+        font-size: 20px;
+    }
+}
+
 body .card .box-left .title span{
     border-bottom: 2px solid rgb(228, 32, 140);
 }
 body .card .box-left .subTitle{
     color: rgba(255,255,255,.7);
     margin: 40px 0 0 15px;
-    font-size: 14px;
-    
+    font-size: 14px; 
+}
+@media screen and (max-width:992px){
+    body .card .box-left .subTitle{
+        margin: 12px 0 0 15px;
+        font-size: 16px;
+    }
 }
 body .card .box-right{
     width: 60%;
@@ -87,6 +147,19 @@ body .card .box-right{
     padding: 40px 70px 40px 40px;
 }
 
+@media screen and (max-width:992px){
+    body .card .box-right{
+        width: 100%;
+        border-radius: 4px;
+    }
+}
+@media screen and (max-width:768px){
+    body .card .box-right{
+        width: 100%;
+        border-radius: 4px;
+        padding: 50px;
+    }
+}
 body  .card .box-right i{
     font-size: 20px;
     color: rgb(107, 107, 107);
@@ -96,17 +169,33 @@ body .card .box-right .title{
     font-weight: 600;
     font-family: sans-serif;
 }
+
+
 body .card .box-right form{
     display: flex;
     flex-direction: column;
     margin: 30px 0 0 0;
+    justify-content: center;
+    align-items: center;
 }
-body .card .box-right form label{
+@media screen and (max-width:1850px) and (min-width:993px){
+    body .card .box-right form .field{
+        width: 100%;
+    }
+}
+@media screen and (max-width:992px){
+    body .card .box-right form .field{
+        width: 80%;
+    }
+}
+body .card .box-right form .field label{
     font-size: 17px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     margin-top: 7px;
+    color: rgb(102, 102, 102);
 }
-body .card .box-right form input{
+
+body .card .box-right form .field input{
     width: 100%;
     background-color: white;
     padding: 5px;
@@ -114,6 +203,14 @@ body .card .box-right form input{
     border: 1px solid rgb(224, 221, 221);
     height: 35px;
     border-radius: 4px;
+}
+@media screen and (max-width:992px){
+    body .card .box-right form .field input{
+        border-radius: 10px;
+        padding: 10px 15px;
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
 }
 body .card .box-right form input:focus{
     border-color: rgb(81, 81, 212);
@@ -130,11 +227,23 @@ body .card .box-right form button{
     cursor: pointer;
     border-radius: 4px;
 }
+@media screen and (max-width:992px){
+    body .card .box-right form button{
+        width: 80%;
+    }
+}
 body .card .box-right .guide{
     margin-top: 50px;
     text-align: right;
     position: relative;
     left: 40px;
+}
+@media screen and (max-width:660px) and (min-width:300px){
+    body .card .box-right .guide{
+        font-size: 17px;
+        text-align: center;
+        left: 0;
+    }
 }
 body .card .box-right .guide a{
     text-decoration: none;
